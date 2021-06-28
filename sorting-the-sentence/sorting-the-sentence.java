@@ -2,7 +2,6 @@ class Solution {
     public String sortSentence(String s) {
         
         TreeMap<Integer, String> map = new TreeMap<>();
-        
         String[] string = s.split(" ");
         
         for(String c : string){
