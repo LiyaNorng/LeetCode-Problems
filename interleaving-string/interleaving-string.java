@@ -4,6 +4,7 @@ class Solution {
         if(s1.length() + s2.length() != s3.length()){
             return false;
         }
+        
         boolean[][] dp = new boolean[s1.length() + 1][s2.length() + 1];
         dp[0][0] = true;
         for(int i = 1; i <= s1.length(); i++){
