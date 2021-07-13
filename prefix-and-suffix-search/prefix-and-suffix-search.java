@@ -1,6 +1,5 @@
 class WordFilter {
 
-    
     Trie pref;
     Trie suf;
     
