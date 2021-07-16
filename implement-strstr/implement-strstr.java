@@ -4,11 +4,5 @@ class Solution {
             return 0;
         }
         return haystack.indexOf(needle);
-       
-        /**int i = 0;
-        while(i < haystack.length()){
-            i = haystack.indexOf(needle.charAt(0)); 
-        }
-        **/
     }
 }
