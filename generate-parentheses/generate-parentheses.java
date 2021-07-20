@@ -1,26 +1,31 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<>();
-        paren(n , 0, 0, list, new char [2 * n], 0);
-        return list;
+        
+        List<String> res = new ArrayList<>();
+        
+        helper(n, 0, 0, new char[n * 2], 0, res);
+        return res;
+  
     }
     
-    public void paren(int n, int open, int close, List<String> list, char [] s,int pos){
+    public void helper(int n, int open, int close, char[] s, int p, List<String> res){
         
-        if(n == close){
-            list.add(new String (s));
-            return ;
+        if(close == n){
+            res.add(new String(s));
+            return;
         }
         else{
+            
             if(open > close){
-                s[pos] = ')';
-                paren(n, open, close + 1, list , s, pos + 1);
+                s[p] = ')';
+                helper(n, open, close + 1, s, p + 1, res);
+            }
+            if(open < n){
+                s[p] = '(';
+                helper(n, open + 1, close, s, p + 1, res);
             }
             
-            if(open < n){
-                s[pos] = '(';
-                paren(n, open + 1, close, list , s, pos + 1);
-            }
         }
+        
     }
 }
