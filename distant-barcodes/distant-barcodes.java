@@ -12,15 +12,6 @@ class Solution {
         PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> hash.get(b) - hash.get(a));
         heap.addAll(hash.keySet());
         int i = 0;
-        for (i = 0; i < length; i += 2){
-            res[i] = heap.peek();
-            hash.put(heap.peek(), hash.get(heap.peek()) - 1);
-            if (hash.get(heap.peek()) == 0){
-                hash.remove(heap.poll());
-                break;
-            }
-        }
-        i += 2;
         int temp = 0;
         while(!hash.isEmpty()){
             if (i >= length){
@@ -36,7 +27,6 @@ class Solution {
             i += 2; 
         }
         return res;
-        
-        
+  
     }
 }
