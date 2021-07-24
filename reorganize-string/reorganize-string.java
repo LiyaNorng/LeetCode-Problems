@@ -14,7 +14,6 @@ class Solution {
         int i = 0;
         while(!queue.isEmpty()){
             char c = queue.poll();
-            //System.out.println(c);
             int count = map.get(c);
             while(count-- > 0){
                 string[i] = c;
