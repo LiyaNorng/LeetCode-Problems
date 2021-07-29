@@ -6,16 +6,20 @@ class Solution {
         int sum = 0;
         int index = 0;
         for(int i = 0; i < gas.length; i++){
-            totalSum += gas[i] - cost[i];
-            sum += gas[i] - cost[i];
-            if(sum < 0){
-                sum = 0;
-                index = i + 1;
+            sum = 0;
+            for(int j = i ; j <= gas.length * 2; j++){
+                sum += gas[j % n] - cost[j % n];
+                if(sum < 0){
+                    break;
+                }
+            }
+            if(sum >= 0){
+                return i;
             }
         }
         
         
-        return totalSum < 0? -1 : index;
+        return -1;
         
         
     }
